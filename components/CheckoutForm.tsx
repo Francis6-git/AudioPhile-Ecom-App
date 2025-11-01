@@ -153,7 +153,7 @@ export function CheckoutForm() {
         <p className="text-black/50 mb-4">Your cart is empty</p>
         <Button
           onClick={() => router.push("/")}
-          className="bg-primary hover:bg-primary-light text-white"
+          className="bg-primary hover:bg-primary-light text-white cursor-pointer"
         >
           Continue Shopping
         </Button>
@@ -438,7 +438,7 @@ export function CheckoutForm() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full md:hidden bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase"
+              className="w-full md:hidden bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer"
             >
               {isSubmitting ? "Processing..." : "Continue & Pay"}
             </Button>
@@ -510,7 +510,7 @@ export function CheckoutForm() {
         <Button
           onClick={form.handleSubmit(onSubmit)}
           disabled={isSubmitting}
-          className="w-full hidden md:block bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase"
+          className="w-full hidden md:block bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer"
         >
           {isSubmitting ? "Processing..." : "Continue & Pay"}
         </Button>

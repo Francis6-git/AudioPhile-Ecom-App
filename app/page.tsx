@@ -19,8 +19,12 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-[#191919] text-white">
-        <div className="container-custom">
+      <section className="relative bg-[#0E0E0E] text-white h-[100vh] overflow-hidden">
+        {/* Background image for mobile & tablet */}
+        <div className="absolute inset-0 bg-[url('/hero-image.png')] bg-cover bg-center lg:bg-none opacity-50 lg:opacity-100"></div>
+
+        <div className="container-custom relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between">
+          {/* Text Content */}
           <div className="flex flex-col items-center text-center py-[108px] md:py-[126px] lg:py-[128px] lg:items-start lg:text-left lg:max-w-[398px]">
             <p className="text-[14px] tracking-[10px] uppercase text-white/50 mb-6">
               New Product
@@ -33,10 +37,22 @@ export default function Home() {
               made for the passionate music enthusiast.
             </p>
             <Link href="/product/xx99-mark-two-headphones">
-              <Button className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase">
+              <Button className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer">
                 See Product
               </Button>
             </Link>
+          </div>
+
+          {/* Desktop Image (hidden on mobile & tablet) */}
+          <div className="hidden lg:block">
+            <Image
+              src="/hero-image.png"
+              alt="XX99 Mark II Headphones"
+              width={600}
+              height={500}
+              priority
+              className="object-contain"
+            />
           </div>
         </div>
       </section>
@@ -86,7 +102,7 @@ export default function Home() {
                 deliver truly remarkable sound.
               </p>
               <Link href="/product/zx9-speaker">
-                <Button className="bg-[#000000] hover:bg-[#4C4C4C] text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase">
+                <Button className="bg-[#000000] hover:bg-[#4C4C4C] text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer">
                   See Product
                 </Button>
               </Link>
@@ -108,7 +124,7 @@ export default function Home() {
               <Link href="/product/zx7-speaker">
                 <Button
                   variant="outline"
-                  className="border-2 border-black bg-transparent hover:bg-black hover:text-white text-black h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase"
+                  className="border-2 border-black bg-transparent hover:bg-black hover:text-white text-black h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer"
                 >
                   See Product
                 </Button>
@@ -133,7 +149,7 @@ export default function Home() {
               <Link href="/product/yx1-earphones">
                 <Button
                   variant="outline"
-                  className="border-2 border-black bg-transparent hover:bg-black hover:text-white text-black h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase"
+                  className="border-2 border-black bg-transparent hover:bg-black hover:text-white text-black h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer"
                 >
                   See Product
                 </Button>

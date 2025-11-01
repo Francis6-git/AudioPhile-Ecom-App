@@ -107,7 +107,7 @@ export default function OrderConfirmation() {
         </div>
 
         <Link href="/">
-          <Button className="w-full bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase">
+          <Button className="w-full bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer">
             Back to Home
           </Button>
         </Link>

@@ -13,11 +13,11 @@ export function Navbar() {
 
   return (
     <>
-      <header className="bg-[#191919] border-b border-white/10">
+      <header className="bg-[#101010] border-b border-white/10">
         <div className="container-custom">
           <nav className="flex items-center justify-between h-[90px] md:h-[96px]">
             <button
-              className="lg:hidden text-white"
+              className="lg:hidden text-white cursor-pointer"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -58,7 +58,7 @@ export function Navbar() {
             </div>
 
             <button
-              className="relative text-white hover:text-primary transition-colors"
+              className="relative text-white hover:text-primary transition-colors cursor-pointer"
               onClick={() => setCartOpen(true)}
               aria-label="Shopping cart"
             >

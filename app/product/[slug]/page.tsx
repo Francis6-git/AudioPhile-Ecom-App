@@ -16,6 +16,7 @@ import categoryHeadphones from "@/public/category-headphones.png";
 import categorySpeakers from "@/public/category-speakers.png";
 import categoryEarphones from "@/public/category-earphones.png";
 import heroAbout from "@/public/hero-about.jpg";
+import Image from "next/image";
 
 export default function Product() {
   const router = useRouter();
@@ -49,7 +50,7 @@ export default function Product() {
         <div className="container-custom">
           <button
             onClick={() => router.back()}
-            className="text-[15px] text-black/50 hover:text-primary transition-colors"
+            className="text-[15px] text-black/50 hover:text-primary transition-colors cursor-pointer"
           >
             Go Back
           </button>
@@ -86,7 +87,7 @@ export default function Product() {
                 <QuantityInput value={quantity} onChange={setQuantity} />
                 <Button
                   onClick={handleAddToCart}
-                  className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase"
+                  className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer"
                 >
                   Add to Cart
                 </Button>
@@ -149,7 +150,7 @@ export default function Product() {
                   {other.name}
                 </h3>
                 <Link href={`/product/${other.slug}`}>
-                  <Button className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold uppercase">
+                  <Button className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold uppercase cursor-pointer">
                     See Product
                   </Button>
                 </Link>
@@ -184,10 +185,11 @@ export default function Product() {
       <section className="pb-[120px] lg:pb-[200px]">
         <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[125px] items-center">
           <div className="lg:order-2">
-            <img
-              src={`${heroAbout}`}
+            <Image
+              src={heroAbout}
               alt="Person enjoying audio with premium headphones"
-              className="rounded-lg w-full h-[300px] lg:h-[588px] object-cover"
+              className="rounded-lg w-full h-[300px] md:h-[300px] lg:h-[588px] object-cover"
+              priority
             />
           </div>
           <div className="text-center lg:text-left lg:order-1">

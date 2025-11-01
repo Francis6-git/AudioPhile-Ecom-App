@@ -33,7 +33,7 @@ export function CartModal({ open, onClose }: CartModalProps) {
             {items.length > 0 && (
               <button
                 onClick={clearCart}
-                className="text-[15px] text-black/50 underline hover:text-primary transition-colors"
+                className="text-[15px] text-black/50 underline hover:text-primary transition-colors cursor-pointer"
               >
                 Remove all
               </button>
@@ -79,7 +79,7 @@ export function CartModal({ open, onClose }: CartModalProps) {
 
                 <Button
                   onClick={handleCheckout}
-                  className="w-full bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase"
+                  className="w-full bg-primary hover:bg-primary-light text-white h-12 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer"
                 >
                   Checkout
                 </Button>

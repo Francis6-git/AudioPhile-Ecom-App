@@ -29,7 +29,7 @@ export function QuantityInput({
     <div className="flex items-center bg-[#F1F1F1] h-12 w-[120px]">
       <button
         onClick={handleDecrement}
-        className="flex-1 flex items-center justify-center text-black/25 hover:text-primary transition-colors disabled:opacity-30"
+        className="flex-1 flex items-center justify-center text-black/25 hover:text-primary transition-colors disabled:opacity-30 cursor-pointer"
         disabled={value <= min}
         aria-label="Decrease quantity"
       >
@@ -38,7 +38,7 @@ export function QuantityInput({
       <span className="flex-1 text-center text-[13px] font-bold">{value}</span>
       <button
         onClick={handleIncrement}
-        className="flex-1 flex items-center justify-center text-black/25 hover:text-primary transition-colors disabled:opacity-30"
+        className="flex-1 flex items-center justify-center text-black/25 hover:text-primary transition-colors disabled:opacity-30 cursor-pointer"
         disabled={value >= max}
         aria-label="Increase quantity"
       >

@@ -45,7 +45,7 @@ export default function Category() {
               }`}
             >
               <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="bg-[#F1F1F1] rounded-lg h-[352px] md:h-[352px] lg:h-[560px] flex items-center justify-center">
+                <div className="bg-[#FAFAFA] rounded-lg h-[352px] md:h-[352px] lg:h-[560px] flex items-center justify-center">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -73,7 +73,7 @@ export default function Category() {
                   {product.description}
                 </p>
                 <Link href={`/product/${product.slug}`}>
-                  <Button className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase">
+                  <Button className="bg-primary hover:bg-primary-light text-white h-12 px-8 text-[13px] font-bold tracking-[1px] uppercase cursor-pointer">
                     See Product
                   </Button>
                 </Link>
