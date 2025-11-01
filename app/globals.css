@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@theme {
+  /* Audiophile Brand Colors */
+  --color-primary: hsl(22 65% 57%); /* #D87D4A */
+  --color-primary-light: hsl(21 94% 75%); /* #FBAF85 */
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  /* Neutral Colors */
+  --color-background: hsl(0 0% 100%); /* #FFFFFF */
+  --color-foreground: hsl(0 0% 0%); /* #000000 */
+  --color-dark: hsl(0 0% 6%); /* #101010 */
+  --color-light-gray: hsl(0 0% 95%); /* #F1F1F1 */
+
+  /* UI Colors */
+  --color-muted: hsl(0 0% 95%);
+  --color-muted-foreground: hsl(0 0% 40%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(0 0% 6%);
+  --color-border: hsl(0 0% 89%);
+  --color-input: hsl(0 0% 89%);
+  --color-ring: hsl(22 65% 57%);
+
+  /* Semantic Colors */
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-secondary: hsl(0 0% 95%);
+  --color-secondary-foreground: hsl(0 0% 9%);
+  --color-accent: hsl(0 0% 95%);
+  --color-accent-foreground: hsl(0 0% 9%);
+
+  /* Popover */
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(0 0% 6%);
+
+  /* Sidebar (for shadcn/ui) */
+  --color-sidebar-background: hsl(0 0% 98%);
+  --color-sidebar-foreground: hsl(0 0% 6%);
+  --color-sidebar-primary: hsl(22 65% 57%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(0 0% 96%);
+  --color-sidebar-accent-foreground: hsl(0 0% 6%);
+  --color-sidebar-border: hsl(0 0% 89%);
+  --color-sidebar-ring: hsl(22 65% 57%);
+
+  /* Border radius */
+  --radius: 0.5rem;
+
+  /* Font */
+  --font-body: var(--font-sans);
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground font-body;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+
+/* Utilities */
+.container-custom {
+  @apply mx-auto px-6 md:px-10 lg:px-[165px];
+  max-width: 1440px;
+}
+
+.content-wrapper {
+  @apply mx-auto;
+  max-width: 1110px;
+}
