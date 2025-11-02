@@ -17,11 +17,11 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useCart } from "@/hooks/useCart";
 import { formatCurrency } from "@/lib/currency";
 import { useCreateOrder } from "@/lib/ordersClient";
-import { sendOrderConfirmation } from "@/lib/emailService";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
+import { sendOrderEmail } from "@/actions/sendMail";
 
 const checkoutSchema = z
   .object({
@@ -138,7 +138,7 @@ export function CheckoutForm() {
         total: grandTotal,
       });
 
-      await sendOrderConfirmation(order);
+      await sendOrderEmail(order);
       clearCart();
       router.push(`/order/${order.id}`);
     } catch (error) {
