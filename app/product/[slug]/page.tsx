@@ -130,6 +130,49 @@ export default function Product() {
         </div>
       </section>
 
+      {/* Gallery */}
+      <section className="pb-[120px] md:pb-[120px]">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-5 md:gap-[18px] lg:gap-[30px]">
+            {/* Left column */}
+            <div className="md:col-span-2 space-y-5 md:space-y-[18px] lg:space-y-[30px]">
+              <div className="bg-[#F1F1F1] rounded-lg h-[174px] md:h-[174px] lg:h-[280px] overflow-hidden relative">
+                <Image
+                  src={product.gallery.first}
+                  alt="Product gallery image 1"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  priority
+                />
+              </div>
+              <div className="bg-[#F1F1F1] rounded-lg h-[174px] md:h-[174px] lg:h-[280px] overflow-hidden relative">
+                <Image
+                  src={product.gallery.second}
+                  alt="Product gallery image 2"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+            </div>
+
+            {/* Right column */}
+            <div className="md:col-span-3">
+              <div className="bg-[#F1F1F1] rounded-lg h-[368px] md:h-[368px] lg:h-[592px] overflow-hidden relative">
+                <Image
+                  src={product.gallery.third}
+                  alt="Product gallery image 3"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Related Products */}
       <section className="pb-[120px]">
         <div className="container-custom">

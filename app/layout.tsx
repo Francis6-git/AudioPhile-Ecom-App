@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { CartProvider } from "@/hooks/useCart";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 
 export const metadata: Metadata = {
   title: "AudioPhile",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CartProvider>{children}</CartProvider>
+        <ConvexClientProvider>
+          <CartProvider>{children}</CartProvider>
+        </ConvexClientProvider>
         <Toaster
           position="bottom-right"
           richColors

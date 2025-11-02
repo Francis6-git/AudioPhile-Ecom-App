@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useCart } from "@/hooks/useCart";
 import { formatCurrency } from "@/lib/currency";
-import { createOrder } from "@/lib/ordersClient";
+import { useCreateOrder } from "@/lib/ordersClient";
 import { sendOrderConfirmation } from "@/lib/emailService";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -69,6 +69,8 @@ export function CheckoutForm() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const createOrder = useCreateOrder();
+
   const shippingFee = 5000; // $50 in cents
   const taxes = Math.round(total * 0.2); // 20% tax
   const grandTotal = total + shippingFee + taxes;
@@ -119,8 +121,8 @@ export function CheckoutForm() {
         paymentDetails:
           data.paymentMethod === "e-money"
             ? {
-                eMoneyNumber: data.eMoneyNumber,
-                eMoneyPin: data.eMoneyPin,
+                eMoneyNumber: data.eMoneyNumber!,
+                eMoneyPin: data.eMoneyPin!,
               }
             : undefined,
         items: items.map((item) => ({

@@ -24,8 +24,8 @@ export type Order = {
   };
   paymentMethod: PaymentMethod;
   paymentDetails?: {
-    eMoneyNumber?: string;
-    eMoneyPin?: string;
+    eMoneyNumber: string;
+    eMoneyPin: string;
   };
   items: OrderItem[];
   shippingFee: number;

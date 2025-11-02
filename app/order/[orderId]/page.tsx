@@ -2,9 +2,9 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getOrderById } from "@/lib/ordersClient";
-import { Order } from "@/lib/types";
+import { api } from "@/convex/_generated/api";
+import { Id } from "@/convex/_generated/dataModel";
+import { useQuery } from "convex/react";
 import { formatCurrency } from "@/lib/currency";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
@@ -13,18 +13,13 @@ export default function OrderConfirmation() {
   const params = useParams();
   const orderId = params?.orderId as string;
 
-  const [order, setOrder] = useState<Order | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Fetch directly from Convex
+  const order = useQuery(
+    api.orders.getOrderById,
+    orderId ? { id: orderId as Id<"orders"> } : "skip"
+  );
 
-  useEffect(() => {
-    if (orderId) {
-      getOrderById(orderId)
-        .then((data) => setOrder(data))
-        .finally(() => setLoading(false));
-    }
-  }, [orderId]);
-
-  if (loading) {
+  if (order === undefined) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F1F1F1]">
         <p>Loading...</p>
@@ -32,7 +27,7 @@ export default function OrderConfirmation() {
     );
   }
 
-  if (!order) {
+  if (order === null) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F1F1F1]">
         <div className="text-center">
