@@ -77,14 +77,32 @@ function generateOrderConfirmationHTML(order: Order): string {
               </td>
             </tr>
 
-            <!-- Shipping Info -->
+           <!-- Shipping Info -->
             <tr>
-              <td style="padding:0 40px 24px;">
+              <td style="padding:0 40px 32px;">
                 <h3 style="margin:24px 0 8px; font-size:18px; color:#191919;">Shipping Address</h3>
                 <p style="color:#555; font-size:14px; line-height:1.5;">
                   ${order.shipping.address}<br/>
                   ${order.shipping.city}, ${order.shipping.postalCode}
                 </p>
+
+                <!-- Contact Info -->
+                <h3 style="margin:24px 0 8px; font-size:18px; color:#191919;">Need Help?</h3>
+                <p style="color:#555; font-size:14px; line-height:1.5;">
+                  If you have any questions about your order, feel free to contact us at
+                  <a href="mailto:support@audiophile.com" style="color:#d97e4a; text-decoration:none; font-weight:bold;">
+                    support@audiophile.com
+                  </a>.
+                </p>
+
+                <!-- View Order Button -->
+                <div style="text-align:center; margin-top:24px;">
+                  <a href="${process.env.NEXT_PUBLIC_BASE_URL}/order/${order.id}" 
+                    style="display:inline-block; background-color:#d97e4a; color:#ffffff; text-decoration:none; 
+                          padding:12px 24px; border-radius:6px; font-size:15px; font-weight:bold;">
+                    View Your Order
+                  </a>
+                </div>
               </td>
             </tr>
 
